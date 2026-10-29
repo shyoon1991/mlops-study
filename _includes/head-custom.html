@@ -1,0 +1,19 @@
+<!-- ```mermaid 코드 블록을 다이어그램으로 그린다 (GitHub 웹 화면과 같게) -->
+<script type="module">
+  import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs";
+  // kramdown은 <pre><code class="language-mermaid">, rouge는 <div class="language-mermaid">로 감싼다
+  document.querySelectorAll("code.language-mermaid, div.language-mermaid").forEach((el) => {
+    const block = el.closest("div.language-mermaid") ?? el.closest("pre") ?? el;
+    const div = document.createElement("div");
+    div.className = "mermaid";
+    div.textContent = el.textContent;
+    block.replaceWith(div);
+  });
+  mermaid.initialize({ startOnLoad: false, theme: "neutral" });
+  await mermaid.run({ querySelector: ".mermaid" });
+</script>
+<style>
+  .main-content table { display: table; width: 100%; }
+  .mermaid { text-align: center; margin: 1rem 0; }
+  .main-content img { border-radius: 6px; }
+</style>
