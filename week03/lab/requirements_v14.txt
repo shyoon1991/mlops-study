@@ -1,0 +1,8 @@
+mlflow==3.17.2
+scikit-learn==1.9.1
+feast[redis]==0.67.0
+pandas
+minio
+s3fs
+boto3
+python-dotenv

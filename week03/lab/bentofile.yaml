@@ -1,0 +1,17 @@
+# BentoML 1.4 — 책 bento/bentofile.yaml과 같은 구조, 서비스 경로와 패키지 버전만 바꿈
+service: "service_v14:IncomeClassifier"
+labels:
+  owner: ml-engineering-team
+  study: mlops-week3
+include:
+  - "service_v14.py"
+  - "src/*.py"
+  - "*.env"
+python:
+  requirements_txt: requirements_v14.txt
+docker:
+  python_version: "3.12"
+# 1.4: 컨테이너 환경 변수는 최상위 envs로 (docker.env에 dict로 쓰면 반영되지 않았다)
+envs:
+  - name: ENV_NAME
+    value: production

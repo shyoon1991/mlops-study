@@ -1,0 +1,25 @@
+# 도전과제: BentoML /metrics → Prometheus → Grafana (2주차 ch4-lab 네트워크에 붙인다)
+name: ch6-monitoring
+services:
+  prometheus:
+    image: prom/prometheus:v3.15.1
+    restart: unless-stopped
+    command: ["--config.file=/etc/prometheus/prometheus.yml", "--storage.tsdb.retention.time=7d"]
+    volumes: ["./prometheus.yml:/etc/prometheus/prometheus.yml:ro"]
+    ports: ["9090:9090"]
+  grafana:
+    image: grafana/grafana:13.2.5
+    restart: unless-stopped
+    environment:
+      # 로컬 실습: 로그인 없이 보기 전용으로 열어 둔다
+      GF_AUTH_ANONYMOUS_ENABLED: "true"
+      GF_AUTH_ANONYMOUS_ORG_ROLE: Viewer
+      GF_DASHBOARDS_DEFAULT_HOME_DASHBOARD_PATH: /var/lib/grafana/dashboards/bentoml.json
+    volumes:
+      - ./grafana/provisioning:/etc/grafana/provisioning:ro
+      - ./grafana/dashboards:/var/lib/grafana/dashboards:ro
+    ports: ["3001:3000"]
+networks:
+  default:
+    name: ch4-lab_default
+    external: true
