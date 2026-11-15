@@ -1,0 +1,139 @@
+{
+ "base": {
+  "test_images": 135,
+  "iou50_rate": 0.563,
+  "top_labels": [
+   [
+    "book",
+    54
+   ],
+   [
+    "person",
+    45
+   ],
+   [
+    "(없음)",
+    12
+   ],
+   [
+    "tv",
+    7
+   ],
+   [
+    "dining table",
+    5
+   ],
+   [
+    "banana",
+    4
+   ]
+  ]
+ },
+ "clip-ep1": {
+  "epochs": 1,
+  "train_sec": 23.3,
+  "map50": 0.0,
+  "map50_95": 0.0,
+  "precision": 0.0,
+  "recall": 0.0
+ },
+ "clip-ep5": {
+  "epochs": 5,
+  "train_sec": 46.7,
+  "map50": 0.8561,
+  "map50_95": 0.8255,
+  "precision": 0.9733,
+  "recall": 0.8108
+ },
+ "clip-ep20": {
+  "epochs": 20,
+  "train_sec": 151.8,
+  "map50": 0.9495,
+  "map50_95": 0.9031,
+  "precision": 0.9837,
+  "recall": 0.8922
+ },
+ "leak-frame": {
+  "split": "frame",
+  "epochs": 5,
+  "map50": 0.9846,
+  "map50_95": 0.9729,
+  "precision": 0.999,
+  "recall": 0.9797
+ },
+ "leak-clip": {
+  "split": "clip",
+  "epochs": 5,
+  "map50": 0.8561,
+  "map50_95": 0.8255,
+  "precision": 0.9733,
+  "recall": 0.8108
+ },
+ "clip-ep3": {
+  "epochs": 3,
+  "train_sec": 40.1,
+  "map50": 0.8688,
+  "map50_95": 0.8054,
+  "precision": 0.9781,
+  "recall": 0.7926
+ },
+ "clip-ep10": {
+  "epochs": 10,
+  "train_sec": 83.4,
+  "map50": 0.8755,
+  "map50_95": 0.8307,
+  "precision": 0.973,
+  "recall": 0.8022
+ },
+ "clip-ep1-nowarmup": {
+  "epochs": 1,
+  "warmup_epochs": 0,
+  "train_sec": 12.7,
+  "map50": 0.0,
+  "map50_95": 0.0,
+  "precision": 0.0,
+  "recall": 0.0
+ },
+ "device-gpu": {
+  "epochs": 1,
+  "train_sec": 16.7,
+  "device": "NVIDIA GeForce RTX 5090"
+ },
+ "device-cpu": {
+  "epochs": 1,
+  "train_sec": 141.7,
+  "device": "CPU (8 threads)"
+ },
+ "fair-leak": {
+  "images": 21,
+  "clips": [
+   "04_aut_id__PS04",
+   "09_chn_id__HS09",
+   "16_deu_passport_new__PS16",
+   "31_jpn_drvlic__PS31",
+   "47_usa_bordercrossing__TS47"
+  ],
+  "leak-frame-ep5": {
+   "map50": 0.9526,
+   "map50_95": 0.914,
+   "recall": 0.9048
+  },
+  "leak-clip-ep5": {
+   "map50": 0.8722,
+   "map50_95": 0.8508,
+   "recall": 0.8095
+  },
+  "frame_test_scenes": {
+   "CA": 11,
+   "KS": 15,
+   "PS": 15,
+   "KA": 20,
+   "HS": 12,
+   "TS": 18,
+   "TA": 16,
+   "PA": 16,
+   "CS": 17,
+   "HA": 8
+  }
+ }
+}

@@ -7,12 +7,14 @@
 | 1주차 | 1~3장: MLOps 생명주기, 컨테이너·K8s·CI/CD | [집에서 LLM 하나 바꾸는 데도 MLOps 생명주기가 다 들어 있었다](week01/README.md) — 도전 과제: Harbor에 hello-joker 올리기 |
 | 2주차 | 4~5장: MLflow, Feast, Kubeflow Pipelines | [MLflow·Feast 최신 버전에 SeaweedFS·Valkey로 4장 실습하기](week02/README.md) — 도전 과제: 최신 버전, MinIO→SeaweedFS·Redis→Valkey, 동작 흐름, EDA fill vs stack |
 | 3주차 | 6~7장: BentoML, Evidently, 데이터 준비 | [BentoML 1.4 · Evidently 0.7로 6장 다시 하기](week03/README.md) — 도전 과제: Harbor, KitOps, Prometheus·Grafana |
+| 4주차 | 7~9장: 데이터 전달, YOLO 학습·검증, PVC | [책 데이터가 사라진 8장 — MIDV-500으로 YOLO 다시 학습하기](week04/README.md) — 도전 과제: 공개 데이터셋, 에포크별 비교, GPU 학습, KFP 아티팩트 타입 |
 
 ## 실습 환경
 
 - Windows 11 + WSL2 Ubuntu 26.04, RTX 5090
 - Docker Engine 29.9 (WSL에 직접 설치, Docker Desktop 없이), NVIDIA Container Toolkit
 - Harbor v2.15.4 (`localhost:8085`, HTTP)
+- 4주차: PyTorch 2.9.1+cu130 (RTX 5090), Ultralytics 8.4.207, KFP 2.18 (`kfp.local`), MIDV-500 5종
 - 3주차: BentoML 1.4.40, Evidently 0.7.23, KitOps 1.16, Prometheus 3.15, Grafana 13.2
 - 2주차: SeaweedFS 4.51, Valkey 9.1.3, MLflow 3.17.2, Feast 0.67.0 (Docker Compose)
 
